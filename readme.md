@@ -1,0 +1,15 @@
+<!-- - Header
+- -logo
+- -nav items
+- Body
+- -search
+- -restaurent-container
+- -res-card
+-      -img
+-      -name
+-      -price
+-      -rating
+- Footer
+-
+-
+- -->
