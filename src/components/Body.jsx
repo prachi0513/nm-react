@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import RestaurentCard from "./RestaurentCard";
 import { SWIGGY_API } from "../../utils/constant";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
@@ -17,10 +18,7 @@ const Body = () => {
     try {
       const response = await fetch(SWIGGY_API);
       const json = await response.json();
-      console.log(
-        json?.data?.cards[1].card?.card?.gridElements?.infoWithStyle
-          ?.restaurants
-      );
+
       setResList(
         json?.data?.cards[1].card?.card?.gridElements?.infoWithStyle
           ?.restaurants
@@ -73,7 +71,12 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filterRes.map((restaurent) => (
-          <RestaurentCard key={restaurent?.info?.id} resData={restaurent} />
+          <Link
+            to={`/restaurent/${restaurent?.info?.id}`}
+            key={restaurent?.info?.id}
+          >
+            <RestaurentCard resData={restaurent} />
+          </Link>
         ))}
       </div>
     </div>
