@@ -2,21 +2,11 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { MENU_API } from "../../utils/constant";
+import useGetMenu from "../../utils/useGetMenu";
 
 function RestaurentMenu() {
   const { resId } = useParams();
-  const [menu, setMenu] = useState([]);
-
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resId);
-    const jsonData = await data.json();
-    console.log(jsonData);
-    setMenu(jsonData);
-  };
+  const menu = useGetMenu(resId);
 
   if (menu.length === 0) {
     return <div> loading----</div>;

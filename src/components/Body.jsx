@@ -10,7 +10,6 @@ const Body = () => {
   const [searchInput, setSearchInput] = useState("");
 
   useEffect(() => {
-    console.log("using effect called");
     fetchData();
   }, []);
 
