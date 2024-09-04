@@ -16,6 +16,8 @@ function RestaurentMenu() {
 
   const { cards } = menu.data.cards[4].groupedCard.cardGroupMap.REGULAR;
 
+  console.log(cards);
+
   return (
     <div>
       <h1>Restaurent Menu : {name}</h1> <h1>{costForTwoMessage}</h1>

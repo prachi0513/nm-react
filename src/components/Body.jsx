@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import RestaurentCard from "./RestaurentCard";
+import RestaurentCard, { withOpenLabel } from "./RestaurentCard";
 import { SWIGGY_API } from "../../utils/constant";
 import { useState } from "react";
 import { Link } from "react-router-dom";
@@ -8,6 +8,8 @@ const Body = () => {
   const [resList, setResList] = useState([]);
   const [filterRes, setFilterRes] = useState([]);
   const [searchInput, setSearchInput] = useState("");
+
+  const RestaurentCardWithLabel = withOpenLabel(RestaurentCard);
 
   useEffect(() => {
     fetchData();
@@ -31,50 +33,63 @@ const Body = () => {
     }
   };
 
+  console.log(resList);
+
   // TODO: We will add shimmer UI Here
   if (resList.length === 0) {
     return <h1>Loading------</h1>;
   }
 
   return (
-    <div>
-      <div className="search-container">
-        <input
-          value={searchInput}
-          name="search"
-          onChange={(event) => setSearchInput(event.target.value)}
-        />
-        <button
-          onClick={() => {
-            const filterRest = resList.filter((res) => {
-              return res.info.name
-                .toLowerCase()
-                .includes(searchInput.toLowerCase());
-            });
-            setFilterRes(filterRest);
-          }}
-        >
-          Search
-        </button>
+    <div className="">
+      <div className="flex">
+        <div className="my-4">
+          <input
+            className="bg-gray-200  border-cyan-950 border rounded-md mx-4"
+            value={searchInput}
+            name="search"
+            onChange={(event) => setSearchInput(event.target.value)}
+          />
+          <button
+            className="bg-green-200 px-2 mx-2 rounded-md border border-green-300"
+            onClick={() => {
+              const filterRest = resList.filter((res) => {
+                return res.info.name
+                  .toLowerCase()
+                  .includes(searchInput.toLowerCase());
+              });
+              setFilterRes(filterRest);
+            }}
+          >
+            Search
+          </button>
+        </div>
+        <div className="bg-blue-400 my-4 px-4 rounded-md border border-green-300">
+          <button
+            onClick={() => {
+              const filterList = resList.filter(
+                (res) => res.info.avgRating > 4
+              );
+              console.log(filterList);
+              setFilterRes(filterList);
+            }}
+          >
+            Top Rated Restaurents
+          </button>
+        </div>
       </div>
-      <div className="filter-btn">
-        <button
-          onClick={() => {
-            const filterList = resList.filter((res) => res.info.avgRating > 4);
-            console.log(filterList);
-            setFilterRes(filterList);
-          }}
-        >
-          Top Rated Restaurents
-        </button>
-      </div>
-      <div className="res-container">
+
+      <div className="flex flex-wrap">
         {filterRes.map((restaurent) => (
           <Link
             to={`/restaurent/${restaurent?.info?.id}`}
             key={restaurent?.info?.id}
           >
-            <RestaurentCard resData={restaurent} />
+            {restaurent.info.isOpen ? (
+              <RestaurentCardWithLabel resData={restaurent} />
+            ) : (
+              <RestaurentCard resData={restaurent} />
+            )}
           </Link>
         ))}
       </div>
