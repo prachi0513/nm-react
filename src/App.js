@@ -8,16 +8,24 @@ import Contact from "./components/Contact";
 import ErrorPage from "./components/ErrorPage";
 import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom";
 import RestaurentMenu from "./components/RestaurentMenu";
+import { UseLoginContextProvider } from "../utils/useLoginContext";
+import { Provider } from "react-redux";
+import appStore from "../utils/appStore";
+import Cart from "./components/Cart";
 // import Grocery from "./components/Grocery";
 
 const Grocery = lazy(() => import("./components/Grocery"));
 
 const Applayout = () => {
   return (
-    <div>
-      <Header />
-      <Outlet />
-    </div>
+    <Provider store={appStore}>
+      <UseLoginContextProvider>
+        <div>
+          <Header />
+          <Outlet />
+        </div>
+      </UseLoginContextProvider>
+    </Provider>
   );
 };
 
@@ -43,6 +51,10 @@ const appRouter = createBrowserRouter([
             <Grocery />
           </Suspense>
         ),
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
     errorElement: <ErrorPage />,

@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect } from "react";
 import RestaurentCard, { withOpenLabel } from "./RestaurentCard";
 import { SWIGGY_API } from "../../utils/constant";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import UseLoginContext from "../../utils/useLoginContext";
 
 const Body = () => {
   const [resList, setResList] = useState([]);
   const [filterRes, setFilterRes] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-
+  const { loggedIn } = useContext(UseLoginContext);
   const RestaurentCardWithLabel = withOpenLabel(RestaurentCard);
 
   useEffect(() => {
@@ -29,15 +30,13 @@ const Body = () => {
           ?.restaurants
       );
     } catch (error) {
-      console.error("Error fetching data:", error);
+      //console.error("Error fetching data:", error);
     }
   };
 
-  console.log(resList);
-
   // TODO: We will add shimmer UI Here
   if (resList.length === 0) {
-    return <h1>Loading------</h1>;
+    return <h1 className="text-center font-bold">Loading {"🔃"}</h1>;
   }
 
   return (
@@ -68,9 +67,9 @@ const Body = () => {
           <button
             onClick={() => {
               const filterList = resList.filter(
-                (res) => res.info.avgRating > 4
+                (res) => res.info.avgRating > 4.3
               );
-              console.log(filterList);
+              //console.log(filterList);
               setFilterRes(filterList);
             }}
           >
