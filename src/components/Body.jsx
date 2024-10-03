@@ -9,7 +9,7 @@ const Body = () => {
   const [resList, setResList] = useState([]);
   const [filterRes, setFilterRes] = useState([]);
   const [searchInput, setSearchInput] = useState("");
-  const { loggedIn } = useContext(UseLoginContext);
+
   const RestaurentCardWithLabel = withOpenLabel(RestaurentCard);
 
   useEffect(() => {
@@ -44,6 +44,7 @@ const Body = () => {
       <div className="flex">
         <div className="my-4">
           <input
+            data-testid="searchInput"
             className="bg-gray-200  border-cyan-950 border rounded-md mx-4"
             value={searchInput}
             name="search"

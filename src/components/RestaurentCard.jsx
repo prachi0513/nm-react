@@ -1,9 +1,14 @@
 import { CONST_IMG_URL } from "../../utils/constant";
 
 const RestaurentCard = ({ resData }) => {
+  //console.log(resData);
+
   const { name, costForTwo, avgRating, cloudinaryImageId } = resData.info;
   return (
-    <div className="w-52 mx-4 border my-2 rounded-lg bg-gray-50 p-2 hover:bg-gray-200">
+    <div
+      className="w-52 mx-4 border my-2 rounded-lg bg-gray-50 p-2 hover:bg-gray-200"
+      data-testid="res-Card"
+    >
       <img className="rounded-lg" src={CONST_IMG_URL + cloudinaryImageId} />
       <p>{name}</p>
       <p>{costForTwo}</p>

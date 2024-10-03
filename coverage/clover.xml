@@ -1,11 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1727851388294" clover="3.2.0">
-  <project timestamp="1727851388294" name="All files">
-    <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
-    <file name="sum.js" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\src\components\sum.js">
-      <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-    </file>
+<coverage generated="1727883704965" clover="3.2.0">
+  <project timestamp="1727883704965" name="All files">
+    <metrics statements="59" coveredstatements="49" conditionals="6" coveredconditionals="4" methods="24" coveredmethods="16" elements="89" coveredelements="69" complexity="0" loc="59" ncloc="59" packages="2" files="10" classes="10"/>
+    <package name="src.components">
+      <metrics statements="37" coveredstatements="34" conditionals="6" coveredconditionals="4" methods="16" coveredmethods="14"/>
+      <file name="Body.jsx" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\src\components\Body.jsx">
+        <metrics statements="24" coveredstatements="21" conditionals="4" coveredconditionals="3" methods="9" coveredmethods="7"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="4" type="stmt"/>
+        <line num="11" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="4" type="stmt"/>
+        <line num="20" count="1" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="38" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="39" count="1" type="stmt"/>
+        <line num="42" count="3" type="stmt"/>
+        <line num="51" count="1" type="stmt"/>
+        <line num="56" count="1" type="stmt"/>
+        <line num="57" count="14" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="70" count="0" type="stmt"/>
+        <line num="71" count="0" type="stmt"/>
+        <line num="74" count="0" type="stmt"/>
+        <line num="84" count="32" type="stmt"/>
+      </file>
+      <file name="Contact.jsx" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\src\components\Contact.jsx">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="4" count="2" type="stmt"/>
+      </file>
+      <file name="Header.jsx" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\src\components\Header.jsx">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="12" count="1" type="stmt"/>
+      </file>
+      <file name="RestaurentCard.jsx" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\src\components\RestaurentCard.jsx">
+        <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
+        <line num="3" count="2" type="stmt"/>
+        <line num="6" count="33" type="stmt"/>
+        <line num="7" count="33" type="stmt"/>
+        <line num="20" count="2" type="stmt"/>
+        <line num="21" count="4" type="stmt"/>
+        <line num="22" count="32" type="stmt"/>
+      </file>
+      <file name="sum.js" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\src\components\sum.js">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+      </file>
+    </package>
+    <package name="utils">
+      <metrics statements="22" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="8" coveredmethods="2"/>
+      <file name="appStore.js" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\utils\appStore.js">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="4" count="1" type="stmt"/>
+      </file>
+      <file name="cartSlice.js" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\utils\cartSlice.js">
+        <metrics statements="5" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="10" count="0" type="stmt"/>
+        <line num="13" count="0" type="stmt"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="21" count="1" type="stmt"/>
+      </file>
+      <file name="constant.js" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\utils\constant.js">
+        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="2" count="3" type="stmt"/>
+        <line num="5" count="3" type="stmt"/>
+        <line num="8" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+      </file>
+      <file name="useLoginContext.js" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\utils\useLoginContext.js">
+        <metrics statements="4" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="0"/>
+        <line num="4" count="2" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="9" count="0" type="stmt"/>
+      </file>
+      <file name="useOnlineStatus.js" path="C:\Users\Prachi Vats\OneDrive\Desktop\NamasteReactClass\utils\useOnlineStatus.js">
+        <metrics statements="8" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="0" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+        <line num="11" count="0" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+      </file>
+    </package>
   </project>
 </coverage>
